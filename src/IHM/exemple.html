@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+                "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Page de Démonstration de IODA</title>
+  <style type="text/css">
+    @import url(../css/style.css);
+  </style>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+  <meta name="author" content="Philippe MATHIEU" />
+  <meta name="Reply-to" content="philippe.mathieu@lifl.fr (Philippe MATHIEU)"/>
+  <meta name="Indentifier-URL" content="http://www.lifl.fr/SMAC/projects/ioda/"/>
+
+  <meta name="keywords" content="système multi-agents, SMA, MAS, comportements, intelligence artificielle, intelligence artificielle distribuée, IA, IAD, agents réactifs, agents cognitifs, ioda, jedi, simulation, interaction, interaction oriented design of agent simulations, java environment for the design of agent interactions, plateforme de simulation, modélisation, méthodologie"/>
+</head>
+
+<body>
+  <div id="page">
+    <div id="menu">
+      <a name="menu">
+        <script type="text/javascript" src="../barrenav.js"></script>
+      </a>
+    </div>
+
+    <div id="langues">
+      <a href="#"><img src="../img/fr.gif"/></a>
+      <a href="index_en.html"><img src="../img/en.gif"/></a>
+    </div>
+    <div id="content">
+	<h1>Page de Démonstration de IODA</h1>
+			<h2>Présentation</h2>
+			<p>
+
+				Cette applet constitue une démonstration de la généricité des concepts proposés dans IODA, et montre à quel point le comportement des agents est facilement modifiable, même au cours d'une simulation.
+				Cette applet s'appuie la plateforme JEDI (<i>Java Environment for the Design of Interactions</i>), qui constitue une implémentation particulière des concepts de IODA.
+			</p>
+			<p>
+				Cette applet propose :
+				<ul>
+					<li>Une ontologue particulière d'interactions contenant 8 interactions différentes (la description de ces interactions est disponible dans l'applet sous la forme d'un tooltip).</li>
+					<li>Un ensemble de quatre familles d'agents, appelées 'Blue', 'Red', 'Green' and 'Yellow', tel que :
+						<ul>
+							<li>Un agent ne peut interagir qu'avec des agents qu'il peut voir.</li>
+
+							<li>Un agent ne voit que les agents présents dans un voisinage de Moore de pronfondeur 4 (un carré 9 x 9 centré sur l'agent).</li>
+							<li>Un agent peut participer à n'importe quelle interaction de l'ontologie.</li>
+						</ul>
+					</li>
+				</ul>
+				Il est possible de définir librement le comportement des agents en faisant glisser une ou plusieurs interactions dans une cellule de la matrice d'interaction.
+			</p>
+			<h2>Applet</h2>
+
+			<p id='attention'>
+				Pour profiter pleinement de l'applet la résolution de votre écran doit être <strong>supérieure</strong> à 750 pixels de large par 500 pixels de haut.
+			</p>
+			<div id="applet">
+				<applet code="ihm.Main.class"
+					archive="couleurs.jar"
+					width="750" height="500">
+					Votre navigateur ne gère pas les applets JAVA.
+				</applet>
+			</div>
+
+			<div id='attention'>
+				Si vous ne pouvez pas exécuter l'applet, il est possible d'utiliser la méthode suivante :
+				<ul>
+					<li>Aller sur <a href='http://www.java.com/fr/'>http://www.java.com/fr/</a>.</li>
+					<li>Cliquer sur <em>Téléchargements</em>.</li>
+					<li>Suivre les instructions.</li>
+
+				</ul>
+				Ou :
+				<ul>
+					<li>Télécharger <a href="couleurs.jar">ce fichier</a>.</li>
+					<li>Exécuter la commande "java -jar couleurs.jar" dans une console.</li>
+				</ul>
+			</div>
+
+			<h2>Tutorial pour utiliser l'applet</h2>
+			<p>
+				Pour tester cette applet, il est possible de :
+			</p>
+			<h3>Première Etape</h3>
+			<ol>
+				<li>Vider le comportement des agents (bouton 'Clean' dans l'onglet 'Configuration').</li>
+				<li>Aller dans l'onglet 'Simulation', et cliquer sur 'Unpause' pour continuer la simulation courante, ou sur 'Restart' pour redémarrer la simulation.</li>
+
+			</ol>
+			<p>
+				Aucun comportement n'est spécifié aux agents, donc la simulation n'affiche aucun changement.
+			</p>
+			<h3>Deuxième Etape</h3>
+			<ol>
+				<li>Retourner à l'onglet 'Configuration'.</li>
+				<li>Faire glisser 'Wander' de la colonne de gauche vers la matrice d'interaction, dans la cellule à l'intersection de la ligne à droite de 'Red' et la colonne sous 'Environment'.</li>
+
+				<li>Retourner à l'onglet 'Simulation' et redémarrer la simulation.</li>
+			</ol>
+			<p>
+				Comme vous pouvez le voir, les agents 'Red' sont à présent capables de bouger.
+			</p>
+			<p>
+				<b>Une ligne de la matrice d'interaction correspond à toutes les interactions que l'agent à sa gauche est capable d'effectuer</b>
+			</p>
+
+			<h3>Troisième Etape</h3>
+			<ol>
+				<li>Retourner à l'onglet 'Configuration'.</li>
+				<li>Faire glisser  'KillTarget' de la colonne de gauche vers la matrice d'interaction, dans la cellule à l'intersection de la ligne à droite de 'Red' et la colonne sous 'Blue'</li>
+				<li>Sélectionner cette cellule, faites un clic-droit, puis cliquez sur le menu 'Edit'.</li>
+				<li>	Complétez le champ 'limit distance' avec la valeur '1'.
+					Dans cette fenêtre, le champ 'limit distance' spécifie la distance maximale séparant un agent 'Red' d'un agent 'Blue' au deça de laquelle l'interaction 'KillTarget' peut être effectuée.</li>
+
+				<li>Retourner à l'onglet 'Simulation' et redémarrer la simulation.</li>
+			</ol>
+			<p>
+				Comme vous pouvez le voir, les agents 'Red' continuent de se déplacer dans l'environnement.
+				De plus, si l'un de ces agents rencontre un agent 'Blue', l'interaction 'KillTarget' est déclenchée, ce qui retire l'agent 'Blue' de l'environnement.
+			</p>
+			<p>
+				Ainsi, <b>une cellule de la matrice d'interaction représente l'ensemble des interactions qu'un agent source </b>(à la gauche d'une ligne de la matrice)<b>
+				est capable d'effectuer sur un agent cible </b>(en haut d'une colonne de la matrice)</b>.
+				Notez que la colonne particulière intitulée 'Environment' représente toutes les interactions dont la cible est implicite (soit l'agent source lui-même, soit seulement l'environnement).
+			</p>
+
+			<h3>Quatrième Etape</h3>
+			<ol>
+				<li>Retourner à l'onglet 'Configuration'.</li>
+				<li> Ajouter l'interaction 'KillSource' à l'intersection de la ligne des agents 'Red' et de la colonne des agents 'Blue'.
+					Attribuer la valeur '1' au champ 'limit distance' de cette interaction.</li>
+				<li>Retourner à l'onglet 'Simulation' et redémarrer la simulation.</li>
+			</ol>
+
+			<p>
+				Maintenant, lorsque deux agents 'Red' et 'Blue' sont suffisamment proches, un agent 'Red' peut effectuer l'une des trois interactions 'Wander', ou détruire un agent 'Blue' ('KillTarget') se détruire lui-même ('KillSource').
+			</p>
+			<h3>Cinquième Etape</h3>
+			<ol>
+				<li>Retourner à l'onglet 'Configuration'.</li>
+				<li>Vider le comportement des agents (bouton 'Clean' dans l'onglet 'Configuration').</li>
+				<li>Ajouter l'interaction 'Wander' à l'intersection de la ligne des agents 'Red' et de la colonne 'Environment'.</li>
+
+				<li>Sélectionner cet élément, faire un clic droit, puis un clic gauche sur 'Edit' et enfin attribuer la valeur '0' au champ 'priority'.</li>
+				<li>Ajouter l'interaction 'KillTarget' à l'intersection de la ligne des agents 'Red' et de la colonne des agents 'Blue'.</li>
+				<li>Sélectionner cet élément, faire un clic droit, puis un clic gauche sur 'Edit' et enfin attribuer la valeur '1' au champ 'priority', ainsi que la valeur '1' au champ 'limit distance'.</li>
+				<li>Ajouter l'interaction 'KillSource' à l'intersection de la ligne des agents 'Red' et de la colonne des agents 'Blue'.</li>
+				<li>Sélectionner cet élément, faire un clic droit, puis un clic gauche sur 'Edit' et enfin attribuer la valeur '2' au champ 'priority', ainsi que la valeur '1' au champ 'limit distance'.</li>
+				<li>Retourner à l'onglet 'Simulation' et redémarrer la simulation.</li>
+
+			</ol>
+			<p>
+				Comme vous pouvez le remarquer, aucun agent 'Blue' n'est détruit, même si l'interaction 'KillTarget' figure dans la matrice d'interactions à la bonne position.
+				Cela tient au fait que des priorités différentes ont été utilisées.
+				<b>Un agent essaie d'effectuer les interactions de sa ligne dans l'ordre décroissant de leurs priorités</b>.
+			</p>
+			<p>
+				Ainsi, dans cet exemple, l'agent tente d'abord d'effectuer 'KillSource' s'il rencontre un agent 'Blue' à une distance maximale de 1.
+				Ensuite, s'il n'a pas pu effectuer cette interaction, il tente d'effectuer 'KillTarget' s'il rencontre un agent 'Blue' à une distance maximale de 1.
+				Enfin,  s'il n'a pas pu effectuer cette interaction, il tente d'effectuer 'Wander'
+			</p>
+			<p>
+				Dans cet exemple, si un agent 'Red' rencontre un agent 'Blue', alors l'interaction 'KillSource' est toujours déclenchée, ne laissant ainsi pas l'occasion à 'KillTarget' d'être déclenchée.
+				S'il n'y a aucun agent 'Blue' à proximité de l'agent 'Red', alors il ne peut qu'effectuer l'interaction 'Wander'.
+			</p>
+
+			<h3>Sixième Etape</h3>
+			<ol>
+				<li>Retourner à l'onglet 'Configuration'.</li>
+				<li>Vider le comportement des agents (bouton 'Clean' dans l'onglet 'Configuration').</li>
+				<li>	Cliquer sur le bouton 'Random', et entrer la valeur '10' dans le champ prévu à cet effet, puis cliquer sur 'Ok'.
+					<b>Cela remplit la matrice d'interaction au hasard avec 10 interactions, et des valeurs aléatoires pour 'limit distance' et 'priority'.</b></li>
+				<li>Retourner à l'onglet 'Simulation' et redémarrer la simulation.</li>
+
+			</ol>
+			<p>
+				Essayez de comprendre le sens de cette simulation !
+			</p>
+			<h2>Pour conclure</h2>
+			<p>
+				La matrice d\interaction constitue une représentation symbolique du comportement des agents.
+				Cette représentation symbolique peut-être automatiquement transformée en comportement chez les agents, comme le prouve cette applet.
+				Ainsi, la méthodologie IODA permet de modéliser facilement des simulations large échelle, pouvant contenir un grand nombre d'agents différents, et dont les agents pouvent participer à un grand nombre d'interaction différentes.
+			</p>
+	</div>
+
+</p>

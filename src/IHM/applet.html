@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Creature Creator</title>
+    <style type="text/css">
+        @import url(../css/style.css);
+    </style>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+    <meta name="author" content="Matthieu MACRET" />
+    <meta name="Reply-to" content="matthieu.macret@ec-marseille.fr"/>
+    <meta name="Indentifier-URL" content="http://matthieu.macret.perso.ec-marseille.fr/"/>
+    <meta name="keywords" content="système multi-agents, SMA, MAS, comportements, intelligence artificielle, intelligence artificielle distribuée, IA, IAD, agents réactifs, agents cognitifs, simulation, interaction, interaction oriented design of agent simulations, java environment for the design of agent interactions, plateforme de simulation, modélisation, méthodologie"/>
+</head>
+
+<body>
+<div id="page">
+<div id="menu">
+    <a name="menu">
+        <script type="text/javascript" src="../barrenav.js"></script>
+    </a>
+</div>
+<div id="langues">
+    <a href="#"><img src="../img/fr.gif"/></a>
+    <a href="index_en.html"><img src="../img/en.gif"/></a>
+</div>
+<div id="content">
+    <h1>Creature Creator</h1>
+
+    <!-- presentation -->
+    <h2>Presentation</h2>
+    <p>
+        This applet is a demonstration of the differentiation model proposed by the SMAC Team of the LIFL. It implements the model and demonstrate some of its capabilities.
+    </p>
+    <p>
+        This applet proposes :
+        <ul>
+            <li>Start the simulation</li>
+            <li>Generate a new population</li>
+            <li>Add manually an agent</li>
+            <li>Check the population</li>
+            <li>Modify and add an norm</li>
+            
+        </ul>
+    </p>
+
+    <!-- applet -->
+    <h2>Applet</h2>
+    <div id="applet">
+        <applet codebase="classes"
+    code="IHM/IHM.class"
+    archive="swing-layout-1.0.3.jar"
+    width="1200"
+    height="1000">
+            Your navigator does not handle java applets.
+        </applet>
+    </div>
+
+    <!-- tutorial-->
+    <h2>Example</h2>
+    <p>
+        To test this applet, you may use the following example.
+    </p>
+
+    <h3>Start the simulation</h3>
+    <ol>
+        <li>Start the simulation (Start button in the Simulation Panel)</li>
+    </ol>
+    <p>
+        By default, three norms are created (Species1, Species2, Species3).<br/>
+        You can see five generated agents by each norm, moving on the Simulation Panel.<br/>
+        They can interact between them in two ways :
+        <ol>
+            <li>If they belong to the same norm, they reproduce.</li>
+            <li>If they belong to different norms, they fight. The bigger wins and the loser is removed from the Simulation Panel</li>
+        </ol>
+        You can follow the evolution of the population with the Statistics Table.
+    </p>
+
+    <h3>Generate a new population</h3>
+
+    <ol>
+        <li>In the Simulation Panel, in the Generate Population block, select Replace existing Population.</li>
+        <li>Complete the "Proportion of each species" and "Percentage of violations" colums with your values.</li>
+        <li>Click on the "Generate" button.</li>
+    </ol>
+    <p>
+        The new population is generated. It is respected the constraint of proportion and of violation rate.<br/>
+
+    </p>
+
+    <h3>Add manually an agent</h3>
+
+    <ol>
+        <li>In the Simulation Panel, in the "Manually add an agent" block, select the "species2" in the Combo Box.</li>
+        <li>Click on the "Generate" button.</li>
+        <li>Ajust the agent's characteristics as you want.</li>
+        <li>Click on the "Add agent in the simulation" button.</li>
+    </ol>
+    <p>
+        An agent which respects the specified norm and which have the specified characteristics is added to the Simulation Panel.<br/>
+        You also can generate violating agent checking the "Violating Agent" Box.
+
+    </p>
+
+    <h3>Check the population</h3>
+
+    <ol>
+        <li>In the "Creature Editor" Panel, click on an species in the Tree.</li>
+        <li>Select an agent.</li>
+        <li>Modify its characterists.</li>
+    </ol>
+    <p>
+        The Tree contains all the present population on the Simulation Panel.<br/>
+        When you select an agent in the Tree, its characterists are updated. You can modify them : They are automatically updated.
+
+    </p>
+
+<h3>Modify and add an norm</h3>
+
+    <ol>
+        <li>In the "Species Description" Panel, select a norm in the Combo Box.</li>
+        <li>Modify the bounds of the different characteristics and the name.</li>
+        <li>Click on the "Add Species" button.</li>
+        <li>Modify the bounds of the different characteristics and the name.</li>
+    </ol>
+    <p>
+        The Combo Box contains all the simulation norms. You can modify them, add one or remove an other.<br/>
+
+    </p>
+    <!-- conclusion -->
+    <h2>Conclusion</h2>
+    <p>
+        With this applet, you can control all the Generation Process and directly see the consequences on the simulation.
+    </p>
+</div>
+ 
